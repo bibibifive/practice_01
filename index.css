@@ -1,0 +1,316 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  position: relative;
+  display: flex;
+  font-family: "pingfang sc", "Courier New", Courier, monospace;
+  height: 100vh;
+}
+
+.header {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(34, 34, 34, 0.1333333333);
+}
+
+#user {
+  width: 30%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+#user .user_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+  overflow: hidden;
+}
+#user .user_page img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+#user .user_page .user_name {
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+#user .user_page .user_email {
+  margin-top: 10px;
+  font-size: small;
+  color: rgba(0, 0, 0, 0.5333333333);
+}
+#user .user_page .user_icon {
+  display: flex;
+  flex-direction: row;
+  width: 180px;
+  justify-content: space-between;
+}
+#user .user_page .user_icon svg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+  background-color: rgba(25, 117, 222, 0.1333333333);
+}
+#user .user_page .user_icon svg path {
+  fill: #278cff;
+}
+#user .user_page .user_icon > div {
+  margin-top: 10px;
+  position: relative;
+}
+#user .user_page .user_icon :nth-child(2)::after,
+#user .user_page .user_icon :nth-child(3)::after {
+  content: "1";
+  display: block;
+  font-size: 10px;
+  text-align: center;
+  font-weight: 700;
+  position: absolute;
+  right: -6px;
+  top: -2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: red;
+  color: #fff;
+}
+#user .user_page .message:hover .user_message {
+  display: none;
+}
+#user .user_page .message:hover .user_messageDetail {
+  display: flex;
+}
+#user .user_page .user_message {
+  display: flex;
+  margin-top: 20px;
+  width: 350px;
+  background-color: rgba(25, 117, 222, 0.1333333333);
+  text-align: center;
+  border-radius: 4px;
+  justify-content: center;
+  position: relative;
+  padding: 2px;
+}
+#user .user_page .user_message .user_triage {
+  width: 0px;
+  height: 0px;
+  border: 10px solid #000000;
+  border-top-color: #278cff;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  position: relative;
+  top: 30%;
+  margin-left: 10px;
+}
+#user .user_page .user_messageDetail {
+  margin-top: 40px;
+  transition: all 0.3s ease-out;
+  width: 350px;
+  position: relative;
+  display: none;
+  flex-direction: column;
+}
+#user .user_page .user_messageDetail div {
+  width: 100%;
+  height: 2em;
+  position: relative;
+  margin-top: 5px;
+}
+#user .user_page .user_messageDetail .left_msg,
+#user .user_page .user_messageDetail .right_msg {
+  padding: 3px 10px;
+  color: #fff;
+  background-color: #278cff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 5px;
+  position: absolute;
+}
+#user .user_page .user_messageDetail .left_msg {
+  left: 10px;
+}
+#user .user_page .user_messageDetail .right_msg {
+  right: 10px;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+#main .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+#main .header > div {
+  display: flex;
+  align-items: center;
+}
+#main .header > div #search {
+  line-height: 2em;
+  background-color: transparent;
+  border: 0px solid #000000;
+}
+#main .header > div #search:focus-visible {
+  outline: none;
+}
+#main #content {
+  flex: 1;
+  display: flex;
+  height: calc(100% - 61px);
+}
+#main #content .note {
+  width: 35%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#main #content .note .note_title {
+  border-left: 4px solid #278cff;
+  padding: 7px 18px;
+}
+#main #content .note ul {
+  flex: 1;
+  list-style-type: none;
+  overflow: scroll;
+}
+#main #content .note ul li {
+  padding: 8px 0 20px 20px;
+  border-bottom: 1px solid rgba(34, 34, 34, 0.1333333333);
+}
+#main #content .note ul li img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  float: left;
+}
+#main #content .note .bottom {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 55px;
+  background-color: #4499f9;
+}
+#main #content .note .bottom button {
+  margin: 5px;
+  background-color: #fff;
+  color: #278cff;
+  position: absolute;
+  right: 0;
+}
+#main #content .email {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+#main #content .email .changer {
+  margin-top: 5px;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  border-bottom: 2px solid rgba(34, 34, 34, 0.1333333333);
+}
+#main #content .email .changer :nth-child(2),
+#main #content .email .changer :nth-child(3) {
+  color: rgba(0, 0, 0, 0.5333333333);
+}
+#main #content .email img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+#main #content .email .email_user {
+  display: flex;
+  width: 85%;
+  margin-top: 25px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(34, 34, 34, 0.1333333333);
+}
+#main #content .email .email_user div {
+  margin-left: 10px;
+}
+#main #content .email .email_user div p:nth-child(2) {
+  font-size: 0.8em;
+  color: rgba(0, 0, 0, 0.5333333333);
+}
+#main #content .email .content_detail {
+  width: 85%;
+}
+#main #content .email .content_detail p:nth-child(1), #main #content .email .content_detail p:nth-child(2) {
+  margin-top: 10px;
+}
+#main #content .email .content_detail p:last-child {
+  margin-top: 10px;
+}
+#main #content .email .content_detail ul {
+  margin-top: 10px;
+  font-size: 0.8em;
+}
+#main #content .email .content_detail ul li {
+  margin-left: 2em;
+}
+
+.note,
+#user {
+  border-right: 1px solid rgba(34, 34, 34, 0.1333333333);
+}
+
+.note_title {
+  border-bottom: 1px solid rgba(34, 34, 34, 0.1333333333);
+}
+
+button {
+  width: 5em;
+  height: 2em;
+  padding: 2px 5px;
+  margin-right: 10px;
+  border: 0;
+  background-color: #278cff;
+  border-radius: 1em;
+  color: #fefefe;
+}
+button:hover {
+  filter: brightness(110%);
+}
+
+.hide {
+  margin: 0;
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: rgba(25, 117, 222, 0.1333333333);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background: #eee;
+}/*# sourceMappingURL=index.css.map */

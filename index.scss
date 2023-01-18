@@ -1,0 +1,339 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#app {
+  position: relative;
+  display: flex;
+  font-family: 'pingfang sc', 'Courier New', Courier, monospace;
+  height: 100vh;
+}
+
+$blue: #278cff;
+$blue-middle: #4499f9;
+$blue-low: #1975de22;
+
+// 全部header
+.header {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #22222222;
+}
+
+// 左框
+#user {
+  // background-color: #fedfac99;
+  width: 30%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  .user_page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    overflow: hidden;
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+    .user_name {
+      margin-top: 10px;
+      font-size: 1.2em;
+      font-weight: 700;
+    }
+    .user_email {
+      margin-top: 10px;
+      font-size: small;
+      color: #00000088;
+    }
+    .user_icon {
+      display: flex;
+      flex-direction: row;
+      width: 180px;
+      justify-content: space-between;
+      svg {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        position: relative;
+        background-color: #1975de22;
+        path {
+          fill: $blue;
+        }
+      }
+      > div {
+        margin-top: 10px;
+        position: relative;
+      }
+      :nth-child(2),
+      :nth-child(3) {
+        &::after {
+          content: '1';
+          display: block;
+          font-size: 10px;
+          text-align: center;
+          font-weight: 700;
+          position: absolute;
+          right: -6px;
+          top: -2px;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: red;
+          color: #fff;
+        }
+      }
+    }
+    .message{
+      &:hover .user_message{
+        display: none;
+      } 
+      &:hover .user_messageDetail{
+        display: flex;
+      } 
+    }
+    .user_message {
+      display: flex;
+      margin-top: 20px;
+      width: 350px;
+      background-color: #1975de22;
+      text-align: center;
+      border-radius: 4px;
+      justify-content: center;
+      position: relative;
+      padding: 2px;
+      .user_triage {
+        width: 0px;
+        height: 0px;
+        border: 10px solid #000000;
+        border-top-color: $blue;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        position: relative;
+        top: 30%;
+        margin-left: 10px;
+      }
+      // &:hover{
+      //   visibility: hidden;
+      // }
+    }
+    .user_messageDetail {
+      margin-top: 40px;
+      transition: all 0.3s ease-out;
+      width: 350px;
+      // background-color: #1975de22;
+      position: relative;
+      display: none;
+      flex-direction: column;
+      div {
+        width: 100%;
+        height: 2em;
+        position: relative;
+        margin-top: 5px;
+      }
+      .left_msg,
+      .right_msg {
+        padding: 3px 10px;
+        color: #fff;
+        background-color: $blue;
+        width: fit-content;
+        height: fit-content;
+        border-radius: 5px;
+        position: absolute;
+      }
+      .left_msg {
+        left: 10px;
+      }
+      .right_msg {
+        right: 10px;
+      }
+    }
+  }
+}
+
+// 右框
+#main {
+  // background-color: #abedcf99;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+    > div {
+      display: flex;
+      align-items: center;
+      #search {
+        line-height: 2em;
+        background-color: transparent;
+        border: 0px solid #000000;
+        &:focus-visible {
+          outline: none;
+        }
+      }
+    }
+  }
+  #content {
+    flex: 1;
+    display: flex;
+    height: calc(100% - 61px);
+    .note {
+      width: 35%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      .note_title {
+        border-left: 4px solid $blue;
+        padding: 7px 18px;
+      }
+      ul {
+        flex: 1;
+        list-style-type: none;
+        overflow: scroll;
+        li {
+          img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            float: left;
+          }
+          padding: 8px 0 20px 20px;
+          border-bottom: 1px solid #22222222;
+        }
+      }
+      .bottom {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: 55px;
+        background-color: $blue-middle;
+        button {
+          margin: 5px;
+          background-color: #fff;
+          color: $blue;
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+    .email {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      .changer {
+        margin-top: 5px;
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        border-bottom: 2px solid #22222222;
+        :nth-child(2),
+        :nth-child(3) {
+          color: #00000088;
+        }
+      }
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      .email_user {
+        display: flex;
+        width: 85%;
+        margin-top: 25px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #22222222;
+        div {
+          margin-left: 10px;
+          p {
+            &:nth-child(2) {
+              font-size: 0.8em;
+              color: #00000088;
+            }
+          }
+        }
+      }
+      .content_detail {
+        width: 85%;
+        p {
+          &:nth-child(1),
+          &:nth-child(2) {
+            margin-top: 10px;
+          }
+          &:last-child{
+
+            margin-top: 10px;
+          }
+        }
+        ul{
+          margin-top: 10px;
+          font-size: 0.8em;
+          li{
+            margin-left: 2em;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 零散样式...................................
+// .........................................
+
+// 右框边线
+.note,
+#user {
+  border-right: 1px solid #22222222;
+}
+
+// 下框边线
+.note_title {
+  border-bottom: 1px solid #22222222;
+}
+
+button {
+  width: 5em;
+  height: 2em;
+  padding: 2px 5px;
+  margin-right: 10px;
+  border: 0;
+  background-color: $blue;
+  border-radius: 1em;
+  color: #fefefe;
+  &:hover {
+    filter: brightness(110%);
+  }
+}
+
+.hide {
+  margin: 0;
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: $blue-low;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background: #eee;
+}

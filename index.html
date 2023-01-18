@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.5flex 自适应布局</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="user">
+        <div class="header"><p>个人中心</p></div>
+        <div class="user_page">
+          <img src="./img/head_img.png" alt="head_img" />
+          <p class="user_name">张瑞涛</p>
+          <p class="user_email">2867293046@qq.com</p>
+          <div class="user_icon">
+            <div>
+              <svg
+                t="1673510625318"
+                class="icon"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                p-id="6344"
+                width="200"
+                height="200"
+                style="padding: 4px"
+              >
+                <path
+                  d="M550.4 74.666667c25.6 0 46.933333 19.2 53.333333 44.8l14.933334 85.333333 38.4 17.066667L727.466667 170.666667c19.2-14.933333 46.933333-12.8 66.133333 4.266666l2.133333 2.133334 53.333334 53.333333c19.2 19.2 21.333333 46.933333 6.4 68.266667l-49.066667 70.4 17.066667 38.4 85.333333 14.933333c23.466667 4.266667 42.666667 25.6 44.8 49.066667v78.933333c0 25.6-19.2 46.933333-44.8 53.333333l-85.333333 14.933334-17.066667 38.4 49.066667 70.4c14.933333 19.2 12.8 46.933333-4.266667 66.133333l-2.133333 2.133333-53.333334 53.333334c-19.2 19.2-46.933333 21.333333-68.266666 6.4l-70.4-49.066667-38.4 17.066667-14.933334 85.333333c-4.266667 23.466667-25.6 42.666667-49.066666 44.8h-78.933334c-25.6 0-46.933333-19.2-53.333333-44.8l-14.933333-85.333333-38.4-17.066667-72.533334 46.933333c-19.2 14.933333-46.933333 12.8-66.133333-4.266666l-2.133333-2.133334-53.333334-53.333333c-19.2-19.2-21.333333-46.933333-6.4-68.266667l49.066667-70.4-17.066667-38.4-85.333333-14.933333c-23.466667-4.266667-42.666667-25.6-44.8-49.066667v-78.933333c0-25.6 19.2-46.933333 44.8-53.333333l85.333333-14.933334 17.066667-38.4L170.666667 296.533333c-14.933333-19.2-12.8-46.933333 2.133333-64l2.133333-2.133333 53.333334-53.333333c19.2-19.2 46.933333-21.333333 68.266666-6.4l70.4 49.066666 38.4-17.066666 14.933334-85.333334c4.266667-23.466667 25.6-42.666667 49.066666-44.8H550.4z m-38.4 320c-64 0-117.333333 53.333333-117.333333 117.333333s53.333333 117.333333 117.333333 117.333333 117.333333-53.333333 117.333333-117.333333-53.333333-117.333333-117.333333-117.333333z"
+                  fill="#666666"
+                  p-id="6345"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <svg
+                t="1673510598960"
+                class="icon"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                p-id="5405"
+                width="200"
+                height="200"
+                style="padding: 3px"
+              >
+                <path
+                  d="M874.666667 375.189333V746.666667a64 64 0 0 1-64 64H213.333333a64 64 0 0 1-64-64V375.189333l266.090667 225.6a149.333333 149.333333 0 0 0 193.152 0L874.666667 375.189333zM810.666667 213.333333a64.789333 64.789333 0 0 1 22.826666 4.181334 63.616 63.616 0 0 1 26.794667 19.413333 64.32 64.32 0 0 1 9.344 15.466667c2.773333 6.570667 4.48 13.696 4.906667 21.184L874.666667 277.333333v21.333334L553.536 572.586667a64 64 0 0 1-79.893333 2.538666l-3.178667-2.56L149.333333 298.666667v-21.333334a63.786667 63.786667 0 0 1 35.136-57.130666A63.872 63.872 0 0 1 213.333333 213.333333h597.333334z"
+                  fill="#007FFC"
+                  p-id="5406"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <svg
+                t="1673511044067"
+                class="icon"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                p-id="14610"
+                width="200"
+                height="200"
+                style="padding: 6px"
+              >
+                <path
+                  d="M896 704c-35.328 0-64-28.672-64-64V384c0-155.648-110.592-284.672-257.024-313.344 0-2.048 1.024-4.096 1.024-6.656C576 28.672 547.328 0 512 0S448 28.672 448 64c0 2.56 1.024 4.096 1.024 6.656-146.432 29.696-257.024 158.72-257.024 313.344v256c0 35.328-28.672 64-64 64s-64 28.672-64 64 28.672 64 64 64h768c35.328 0 64-28.672 64-64s-28.672-64-64-64zM512 1024c70.656 0 128-57.344 128-128H384c0 70.656 57.344 128 128 128z"
+                  p-id="14611"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <div class="message">
+            <div class="user_message">
+              <p>展开显示动态消息</p>
+              <div><div class="user_triage"></div></div>
+            </div>
+            <div class="user_messageDetail hide">
+              <div><div class="left_msg">今天天气 晴 ☀</div></div>
+              <div><div class="left_msg">有个stranger给你来电话了</div></div>
+              <div><div class="right_msg">有个邮件，阅读全文...</div></div>
+              <div><div class="right_msg">今天天气 晴☀</div></div>
+              <div><div class="left_msg">有个消息</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="main">
+        <div class="header">
+          <div>
+            <svg
+              t="1673508019402"
+              class="icon"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              p-id="2689"
+              width="30"
+              height="30"
+            >
+              <path
+                d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6c3.2 3.2 8.4 3.2 11.6 0l43.6-43.5c3.2-3.2 3.2-8.4 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"
+                fill="#000"
+                p-id="2690"
+              ></path>
+            </svg>
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="请搜索..."
+            />
+          </div>
+          <div>
+            <button>邮箱</button>
+            <button>日历</button>
+          </div>
+        </div>
+
+        <div id="content">
+          <div class="note">
+            <p class="note_title">记事本</p>
+            <ul>
+              <li>
+                <img src="./img/head_img.png" alt="123">
+                XXXXXXXXXXXXXXXXXXXXXXX</li>
+              <li>XXXXXXXXXXXXXXXXXXXXXXX</li>
+              <li>XXXXXXXXXXXXXXXXXXXXXXX</li>
+              <li>XXXXXXXXXXXXXXXXXXXXXXX</li>
+              <li>XXXXXXXXXXXXXXXXXXXXXXX</li>
+              <li>XXXXXXXXXXXXXXXXXXXXXXX</li>
+              <li>XXXXXXXXXXXXXXXXXXXXXXX</li>
+              <li>XXXXXXXXXXXXXXXXXXXXXXX</li>
+              <li>XXXXXXXXXXXXXXXXXXXXXXX</li>
+              <li>XXXXXXXXXXXXXXXXXXXXXXX</li>
+              <li>XXXXXXXXXXXXXXXXXXXXXXX</li>
+              <li>XXXXXXXXXXXXXXXXXXXXXXX</li>
+              <li>XXXXXXXXXXXXXXXXXXXXXXX</li>
+              <li>XXXXXXXXXXXXXXXXXXXXXXX</li>
+              <li>XXXXXXXXXXXXXXXXXXXXXXX</li>
+            </ul>
+            <div class="bottom">
+              <button>添加</button>
+            </div>
+          </div>
+          <div class="email">
+            <div class="changer">
+              <p>收件箱</p>
+              <p>/</p>
+              <p>已发送</p>
+            </div>
+            <div class="email_user">
+              <img src="./img/head_img.png" alt="head" />
+              <div>
+                <p>123</p>
+                <p>123</p>
+              </div>
+            </div>
+            <div class="content_detail">
+              <p class="title">学习建议</p>
+              <p class="key_sentence">推荐一些学习资料
+                </p>
+              <ul>
+                书籍:
+                <li>
+                  HTML、CSS：《Head First
+                  HTML与CSS》、《CSS揭秘》、《精通CSS高级Web标准解决方案》、《CSS权威指南》、《图解CSS3核心技术与案例实战》、《CSS禅意花园》、《CSS世界》......
+                </li>
+                <li>
+                  JavaScript：《JavaScript高级程序设计》、《JavaScript权威指南》、《你不知道的JavaScript》、《深入理解ES6》、《JavaScript设计模式》、《JavaScript语言精髓和编程实践》.......
+                </li>
+                <li>
+                  计算机基础知识以及进阶：《HTTP权威指南》、《Webkit技术内幕》、《深入理解计算机系统》、《代码大全》、《编程珠玑》、《设计模式》.......
+                </li>
+                <li>
+                  设计：《写给大家看的设计书》、《点石成金》、《用户体验要素》
+                </li>
+              </ul>
+              <p>带着目的进行书籍的选择和阅读,辩证独立思考进行选择,辩证的阅读</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
